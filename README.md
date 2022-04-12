@@ -45,7 +45,7 @@ In this module, you are asked to analyse the status of all candidates while peop
 This challenge is about using a collection (list) of integers and allowing the user to select options from a menu to perform operations on the list.
  
 Your program should display a menu options to the user as follows: 
-```sh
+```
  P - Print numbers for a particular candidate (for example candidate 1 or candidate 2) 
  A - Add number of votes to a candidate (with an existing voter ID) 
  S - Display the smallest number of votes candidate 
