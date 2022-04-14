@@ -1,4 +1,5 @@
 #include <iostream>
+#include "general.h"
 
 template <typename T>
 void input(const std::string& display, T& store_in) {
@@ -6,7 +7,12 @@ void input(const std::string& display, T& store_in) {
   std::cin >> store_in;
 }
 
-
 int main() {
-  // 
+  print_file_content("heading");
+  char chosen_option = 'a';
+
+  while (chosen_option != 'q') {
+    print_file_content("menu");
+    input(">>> ", chosen_option);
+  }
 }
