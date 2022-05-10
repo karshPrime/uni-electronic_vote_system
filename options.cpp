@@ -1,17 +1,23 @@
-#include "options.h"
+/*
+Contains user option functions
+*/
 
-void print_candidate_vote_count(int id)
-{
+// would display passed candidate's vote count
+void print_candidate_vote_count(int id) {
+
 }
 
-void add_vote_to_candidate(int cid, int vid)
-{
+// would add votes to required candidate
+void add_vote_to_candidate(int cid, int vid) {
+
 }
 
-void print_lowest_candidate_votes(int id)
-{
+// would display candidate with lowest vote count
+void print_lowest_candidate_votes(int id) {
+
 }
 
-void print_highest_candidate_votes(int id)
-{
+// would display candidate with highest vote count
+void print_highest_candidate_votes(int id) {
+
 }

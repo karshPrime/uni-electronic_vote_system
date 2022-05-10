@@ -1,7 +1,8 @@
-#pragma once // preventing header from calling more than once
-
 /*
 This header contains declaration to general.cpp functions.
 */
 
-void print_file_content(std::string);
+#pragma once            // preventing header from being called more than once
+
+#include "general.cpp"  // general functions required by multiple modules
+#include "options.cpp"  // user option functions
