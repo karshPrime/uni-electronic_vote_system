@@ -1,10 +1,10 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-
 /*
 This file contains functions that would be required by different modules
 */
+
+#include <iostream>
+#include <fstream>
+#include <string>
 
 // print content of the passed file
 void print_file_content(std::string file_name) {

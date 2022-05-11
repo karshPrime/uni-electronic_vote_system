@@ -1,7 +1,6 @@
 #include <iostream>
 #include <windows.h>
 #include "general.h"
-#include "options.h"
 
 // more compact way to get user input
 template <typename T>
