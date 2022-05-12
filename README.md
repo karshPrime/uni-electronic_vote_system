@@ -12,22 +12,26 @@ about the project.
 To start with, create a primary database with voter table and a candidate table as shown below. Add at least 10 different field names on both. You need to input sample datasets (create at least 10 to 15 datasets). 
 
 ### Voter Table
-| Field Name | Data Type  | Description        |
-|-|-|-|
-| Voter ID   | Integer    | Login ID for Voter |
-| Name       | Var Char   | Name of the Voter  |
-| Age        | Integer    |                    |
-| Suburb     | Var Char   |                    |
-| Status     |            |                    |
+| Field Name | Data Type  |
+|-|-|
+| Voter ID   | Integer    |
+| Name       | String     |
+| Age        | Integer    |
+| Suburb     | String     |
+| Status     | Boolean    |
 
 ### Candidate Table
-| Field Name | Data Type  | Description        |
-|-|-|-|
-| Symbol     | Var Char   | Party symbol       |
-| Name       | Var Char   | Name of the Voter  |
-| Age        | Integer    |                    |
-| Suburb     | Var Char   |                    |
-| Count      | Integer    |                    |
+| Field Name | Data Type  | 
+|-|-|
+| Symbol     | String     | 
+| First Name | String     | 
+| Last Name  | String     |
+| Age        | Integer    | 
+| Suburb     | String     | 
+| Count      | Integer    | 
+| Phone No.  | Integer    |
+| Sex        | String     |
+| Email      | String     |
 
 
 ## Task Requirements: 
