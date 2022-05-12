@@ -23,6 +23,9 @@ int main() {
   print_file_content("heading");
   char chosen_option = 'a';
 
+  // values required for actions
+  int candidate_id, voter_id;
+
   // loop until user opts to quit
   while (chosen_option != 'q') {
     SetConsoleTextAttribute(h, aqua);       // prompt font color = blue
@@ -36,20 +39,27 @@ int main() {
     // switch statement for upper case user_input
     switch ((char)toupper(chosen_option)) {
       case 'P':
-        std::cout << "hello P\n";
-        // call function to display number of candidates here
+        input("Enter candidate ID", candidate_id);
+        print_candidate_vote_count(candidate_id);
         break;
+
       case 'A':
-        std::cout << "hello A\n";
+        input("Enter voted Candidate's ID: ", candidate_id);
+        input("Enter voter's ID: ", voter_id);
+        add_vote_to_candidate(candidate_id, voter_id);
         break;
+
       case 'S':
-        std::cout << "hello S\n";
-        // call function to display candidate with the least votes here
+        print_lowest_candidate_votes();
         break;
+
       case 'L':
-        std::cout << "hello L\n";
-        // call function to display candidate with the most votes here
+        print_highest_candidate_votes();
         break;
+
+      case 'Q':
+        break;
+
       default:
         // setting font color to dark red
         SetConsoleTextAttribute(h, red);    // prompt font color = red
