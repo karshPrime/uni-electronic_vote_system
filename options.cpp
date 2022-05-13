@@ -2,6 +2,9 @@
 Contains user option functions
 */
 
+/* comment for aweb; delete comment after reading
+this contains include <iostream>, <fstream>
+and declaration for person class */
 #include "general.h"
 
 // would display passed candidate's vote count

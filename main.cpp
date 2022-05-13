@@ -1,6 +1,5 @@
-#include <iostream>
-#include <windows.h>
 #include "general.h"
+#include "options.cpp"
 
 // simpler way to store user input
 template <typename T>
@@ -18,7 +17,6 @@ int main() {
   HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
   int red = 4, aqua = 11, green = 10, yellow = 14; // color codes
 
-  // setting font color to red
   SetConsoleTextAttribute(h, red);       // prompt font color = red
   print_file_content("heading");
   char chosen_option = 'a';
