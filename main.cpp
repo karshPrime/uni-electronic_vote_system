@@ -37,13 +37,13 @@ int main() {
     // switch statement for upper case user_input
     switch ((char)toupper(chosen_option)) {
       case 'P':
-        input("Enter candidate ID", candidate_id);
+        input("Enter candidate ID: ", candidate_id);
         print_candidate_vote_count(candidate_id);
         break;
 
       case 'A':
-        input("Enter voted Candidate's ID: ", candidate_id);
         input("Enter voter's ID: ", voter_id);
+        input("Enter voted Candidate's ID: ", candidate_id);
         add_vote_to_candidate(candidate_id, voter_id);
         break;
 

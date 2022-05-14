@@ -83,8 +83,6 @@ Candidate construct_candidate(const std::string& text)
 	std::vector<std::string> attributes;
 	split(text, " ", attributes);
 
-	std::cout << attributes[5];
-
 	candidate.count = std::stoi(attributes[0]);
 	candidate.id = std::stoi(attributes[1]);
 	candidate.symbol = attributes[2];
@@ -97,6 +95,29 @@ Candidate construct_candidate(const std::string& text)
 	candidate.phone = attributes[9];
 
 	return candidate;
+}
+
+Voter construct_voter(const std::string& text)
+{
+	Voter voter;
+
+	std::vector<std::string> attributes;
+	split(text, " ", attributes);
+
+	voter.has_voted = attributes[0] == "y";
+	voter.id = std::stoi(attributes[1]);
+	voter.l_name = attributes[2];
+	voter.f_name = attributes[3];
+	voter.age = stoi(attributes[4]);
+	voter.gender = attributes[5];
+	voter.suburb = attributes[6];
+	voter.email = attributes[7];
+	voter.phone = attributes[8];
+
+	if (voter.has_voted)
+		voter.date_voted = attributes[9];
+
+	return voter;
 }
 
 // Given a string, splits it by the delimiter and puts it in a vector

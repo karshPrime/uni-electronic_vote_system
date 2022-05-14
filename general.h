@@ -19,4 +19,6 @@ void print_candidate(const Candidate&);
 
 Candidate construct_candidate(const std::string& text);
 
+Voter construct_voter(const std::string& text);
+
 void split(const std::string& str, const std::string& delimiters, std::vector<std::string>& tokens);
