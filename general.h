@@ -14,4 +14,5 @@ This header contains declaration to general.cpp functions.
 
 // print menu and heading
 void print_file_content(std::string file_name);
+
 void print_candidate(const Candidate&);
