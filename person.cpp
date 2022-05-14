@@ -11,12 +11,10 @@ struct Person {
 
 struct Voter : public Person {
 	bool has_voted = false;  // if voter has voted; by default not.
+	std::string date_voted; // will not be included in the file until the voter casts their vote.
 };
 
 struct Candidate : public Person {
 	std::string symbol;	// political party symbol
 	std::size_t count;	// count can only be positive int
-
-	// todo: add date voted
-	// todo: add age to candidates.txt
 };

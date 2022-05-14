@@ -83,15 +83,18 @@ Candidate construct_candidate(const std::string& text)
 	std::vector<std::string> attributes;
 	split(text, " ", attributes);
 
+	std::cout << attributes[5];
+
 	candidate.count = std::stoi(attributes[0]);
 	candidate.id = std::stoi(attributes[1]);
 	candidate.symbol = attributes[2];
 	candidate.l_name = attributes[3];
 	candidate.f_name = attributes[4];
-	candidate.gender = attributes[5];
-	candidate.suburb = attributes[6];
-	candidate.email = attributes[7];
-	candidate.phone = attributes[8];
+	candidate.age = std::stoi(attributes[5]);
+	candidate.gender = attributes[6];
+	candidate.suburb = attributes[7];
+	candidate.email = attributes[8];
+	candidate.phone = attributes[9];
 
 	return candidate;
 }
