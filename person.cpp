@@ -3,10 +3,10 @@
 // Parent class for voter and candidate
 struct Person {
 	// first name, last name, suburb, email, gender
-	std::string f_name, l_name, suburb, email, gender;
+	std::string f_name, l_name, suburb, email, gender, phone;
 
 	// age, phone and id
-	int age, phone, id;
+	int age, id;
 };
 
 struct Voter : public Person {
@@ -14,6 +14,9 @@ struct Voter : public Person {
 };
 
 struct Candidate : public Person {
-	std::string symbol;        // political party symbol
-	std::size_t count;  // count can only be positive int
+	std::string symbol;	// political party symbol
+	std::size_t count;	// count can only be positive int
+
+	// todo: add date voted
+	// todo: add age to candidates.txt
 };

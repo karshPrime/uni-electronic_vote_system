@@ -1,15 +1,15 @@
-0 1 Labor Smith Rae Female Springfield Rae_Smith@gmail.com 200000 +61647544852
-0 2 Liberal Jinping Joe Male SurreyHills Joe_Jinping@gmail.com 120000 +61245874632
-0 3 Liberal White Walter Male Jimboomba Walter_White@gmail.com 170000 +61244587456
-0 4 Labor Gray Lana Female Jimboomba Lana_Gray@gmail.com 160000 +61452333695
-0 5 Liberal Reacher Jack Male Hawthron Jack_Reacher@gmail.com 160000 +61274536664
-0 6 Liberal Door Alys Female Huntly Alys_Door@gmail.com 150000 +61365522148
-0 7 Liberal Williams Elliot Male Toorak Elliot_Williams@gmail.com 230000 +61235584265
-0 8 Labor Brown Will Male Moil Will_Brown@gmail.com 180000 +61245654525
-0 9 Labor Smith Sarah Female Jimboomba Sarah_Smith@gmail.com 190000 +61236254125
-0 10 Liberal Wilson Lebron Male Huntly L_Wilson@gmail.com 170000 +61268452652
-0 11 Labor Taylor Kyle Male Coburg Kyle_Taylor@gmail.com 140000 +616425475142
-0 12 Labor Lee Hannah Female Farrar Hannah_Lee@gmail.com 110000 +61146414846
-0 13 Labor Johnson Haley Female Coburg Haley_Johnson@gmail.com 160000 +61224569851
-0 14 Liberal Martin Marshal Male Wilton Marshal_Martin@gmail.com 180000 +61212465784
-0 15 Labor Anderson David Male Como David_Anderson@gmail.com 110000 +61356845669
+0 1 Labor Smith Rae Female Springfield Rae_Smith@gmail.com +61647544852
+0 2 Liberal Jinping Joe Male SurreyHills Joe_Jinping@gmail.com +61245874632
+0 3 Liberal White Walter Male Jimboomba Walter_White@gmail.com +61244587456
+0 4 Labor Gray Lana Female Jimboomba Lana_Gray@gmail.com +61452333695
+0 5 Liberal Reacher Jack Male Hawthron Jack_Reacher@gmail.com +61274536664
+0 6 Liberal Door Alys Female Huntly Alys_Door@gmail.com +61365522148
+0 7 Liberal Williams Elliot Male Toorak Elliot_Williams@gmail.com +61235584265
+0 8 Labor Brown Will Male Moil Will_Brown@gmail.com +61245654525
+0 9 Labor Smith Sarah Female Jimboomba Sarah_Smith@gmail.com +61236254125
+0 10 Liberal Wilson Lebron Male Huntly L_Wilson@gmail.com +61268452652
+0 11 Labor Taylor Kyle Male Coburg Kyle_Taylor@gmail.com +616425475142
+0 12 Labor Lee Hannah Female Farrar Hannah_Lee@gmail.com +61146414846
+0 13 Labor Johnson Haley Female Coburg Haley_Johnson@gmail.com +61224569851
+0 14 Liberal Martin Marshal Male Wilton Marshal_Martin@gmail.com +61212465784
+0 15 Labor Anderson David Male Como David_Anderson@gmail.com +61356845669

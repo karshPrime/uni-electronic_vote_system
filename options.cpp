@@ -1,8 +1,10 @@
+#pragma once
+
 /*
 Contains user option functions
 */
 
-#include "general.h"
+#include "options.h"
 
 // would display passed candidate's vote count
 void print_candidate_vote_count(int &id) {

@@ -1,5 +1,5 @@
 #include "general.h"
-#include "options.cpp"
+#include "options.h"
 
 // simpler way to store user input
 template <typename T>
@@ -13,6 +13,8 @@ void input(const std::string& display, T& store_in) {
 
 // main function
 int main() {
+  print_candidate(construct_candidate("0 1 Labor Smith Rae Female Springfield Rae_Smith@gmail.com +61647544852"));
+
   // configure console color
   HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
   int red = 4, aqua = 11, green = 10, yellow = 14; // color codes
