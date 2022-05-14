@@ -39,7 +39,7 @@ void print_candidate_vote_count(int& id) {
 // todo(aweb): clean up and comment this monstrosity
 void add_vote_to_candidate(int& cid, int& vid) {
 	std::fstream candidateFile("candidates.txt");
-	std::fstream voterFile("voter.txt");
+	std::fstream voterFile("voters.txt");
 	std::string tmpStr;
 
 	if (candidateFile.is_open()) {
