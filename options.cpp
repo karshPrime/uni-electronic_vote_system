@@ -26,7 +26,10 @@ void print_candidate_vote_count(int& id) {
 			// check if this is the candidate we are searching for
 			if (candidate.id == id) {
 				// print out the candidate vote count
-				std::cout << "Candidate " << id << " has " << candidate.count << " votes." << std::endl;
+				print_candidate(candidate);
+
+				// another option
+				// std::cout << "Candidate " << id << " (" << candidate.f_name << " " << candidate.l_name + ") " << " has " << candidate.count << " votes." << std::endl;
 				break;
 			}
 		}
