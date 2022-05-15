@@ -4,8 +4,6 @@
 Contains user option functions
 */
 
-#include <fstream>
-#include <iostream>
 #include <string>
 #include <ctime>
 
