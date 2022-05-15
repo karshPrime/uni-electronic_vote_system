@@ -86,9 +86,11 @@ Candidate construct_candidate(const std::string& text)
 {
 	Candidate candidate;
 
+	// get the tokens (in order defined in file)
 	std::vector<std::string> attributes;
 	split_string(text, " ", attributes);
 
+	// assign the variables to the candidate object
 	candidate.count = std::stoi(attributes[0]);
 	candidate.id = std::stoi(attributes[1]);
 	candidate.symbol = attributes[2];
@@ -108,9 +110,11 @@ Voter construct_voter(const std::string& text)
 {
 	Voter voter;
 
+	// get the tokens (in order defined in file)
 	std::vector<std::string> attributes;
 	split_string(text, " ", attributes);
 
+	// assign the variables to the candidate object
 	voter.has_voted = attributes[0] == "y";
 	voter.id = std::stoi(attributes[1]);
 	voter.l_name = attributes[2];
@@ -121,6 +125,7 @@ Voter construct_voter(const std::string& text)
 	voter.email = attributes[7];
 	voter.phone = attributes[8];
 
+	// if the candidate hasn't voted yet there wil be no date voted string
 	if (voter.has_voted)
 		voter.date_voted = attributes[9];
 
