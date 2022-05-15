@@ -10,7 +10,7 @@ Contains user option functions
 #include "options.h"
 #include "general.h"
 
-//todo (aweb): comment code
+//todo (aweb): check if candidate/voter exists
 
 // would display passed candidate's vote count
 void print_candidate_vote_count(int& id) {
@@ -18,10 +18,14 @@ void print_candidate_vote_count(int& id) {
 
 	if (file.is_open()) {
 		std::string line;
+
 		while (std::getline(file, line)) {
+			// create the candidate given the text string
 			auto candidate = construct_candidate(line);
 
+			// check if this is the candidate we are searching for
 			if (candidate.id == id) {
+				// print out the candidate vote count
 				std::cout << "Candidate " << id << " has " << candidate.count << " votes." << std::endl;
 				break;
 			}

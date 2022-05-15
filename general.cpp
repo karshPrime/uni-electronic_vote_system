@@ -4,31 +4,36 @@ This file contains functions that would be required by different modules
 
 #include "general.h"    // contains common declarations
 
-// print content of the passed file
+// prints the contents of the given text file
 void print_file_content(std::string file_name) {
-	file_name += ".txt";  // adding file extension
+	// adding file extension
+	file_name += ".txt";
+
 	std::fstream toread;
 
 	toread.open(file_name, std::ios::in);
 	if (toread.is_open()) {
 		std::string text_line;
+
 		// loop through the file- line by line, and print the content
 		while (std::getline(toread, text_line)) {
 			std::cout << text_line << "\n";
 		}
-		toread.close();
 
+		toread.close();
 	}
 	else {
 		std::cout << "file not found\n";
 	}
 }
 
-// print details of passed candidate
+// prints the details of a given candidate in a neat manner
 void print_candidate(const Candidate& c) {
 	// configure console color
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	int red = 4, aqua = 11, green = 10, yellow = 14; // color codes
+
+	// color codes
+	int red = 4, aqua = 11, green = 10, yellow = 14;
 
 	SetConsoleTextAttribute(h, green);
 	std::cout << "ID           : ";
@@ -76,12 +81,13 @@ void print_candidate(const Candidate& c) {
 	std::cout << c.email << std::endl;
 }
 
+// creates a candidate object given a text string
 Candidate construct_candidate(const std::string& text)
 {
 	Candidate candidate;
 
 	std::vector<std::string> attributes;
-	split(text, " ", attributes);
+	split_string(text, " ", attributes);
 
 	candidate.count = std::stoi(attributes[0]);
 	candidate.id = std::stoi(attributes[1]);
@@ -97,12 +103,13 @@ Candidate construct_candidate(const std::string& text)
 	return candidate;
 }
 
+// creates a voter object given a text string
 Voter construct_voter(const std::string& text)
 {
 	Voter voter;
 
 	std::vector<std::string> attributes;
-	split(text, " ", attributes);
+	split_string(text, " ", attributes);
 
 	voter.has_voted = attributes[0] == "y";
 	voter.id = std::stoi(attributes[1]);
@@ -122,19 +129,22 @@ Voter construct_voter(const std::string& text)
 
 // Given a string, splits it by the delimiter and puts it in a vector
 // Reference: https://stackoverflow.com/a/600040
-void split(const std::string& str, const std::string& delimiters, std::vector<std::string>& tokens)
+void split_string(const std::string& str, const std::string& delimiters, std::vector<std::string>& result)
 {
 	// Skip delimiters at beginning.
 	std::string::size_type lastPos = str.find_first_not_of(delimiters, 0);
+
 	// Find first "non-delimiter".
 	std::string::size_type pos = str.find_first_of(delimiters, lastPos);
 
 	while (std::string::npos != pos || std::string::npos != lastPos)
 	{
 		// Found a token, add it to the vector.
-		tokens.push_back(str.substr(lastPos, pos - lastPos));
+		result.push_back(str.substr(lastPos, pos - lastPos));
+
 		// Skip delimiters.  Note the "not_of"
 		lastPos = str.find_first_not_of(delimiters, pos);
+
 		// Find next "non-delimiter"
 		pos = str.find_first_of(delimiters, lastPos);
 	}
