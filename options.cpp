@@ -114,10 +114,116 @@ void add_vote_to_candidate(int& cid, int& vid) {
 
 // would display candidate with lowest vote count
 void print_lowest_candidate_votes() {
-
+	Candidate candidate;
+    // open the candidate file
+    std::fstream myfile;
+    myfile.open("candidates.txt",std::ios::in);
+    // check if the file is valid
+    if (!myfile.is_open()) 
+    {
+        std::cout<<"File can't open"<<std::endl;
+    }
+    else
+    {
+        std::string msymbol, mfirstname, mlastname, mgender, msuburb, memail, mphone;
+        int mage, mid;
+        int min=1, check = 0, count;
+        while (myfile.good()) 
+        {
+            //print from the file to the string line by line
+            myfile>>count;
+            myfile>>mid;
+            myfile>>msymbol;
+            myfile>>mlastname;
+            myfile>>mfirstname;
+            myfile>>mage;
+            myfile>>mgender;
+            myfile>>msuburb;
+            myfile>>memail;
+            myfile>>mphone;
+            // check if the candidate has the smallest votes
+            if (count <= min)
+            {
+                //store to the struct 
+                min = count;
+                candidate.count = min;
+                candidate.id = mid;
+                candidate.symbol = msymbol;
+                candidate.l_name = mlastname;
+                candidate.f_name = mfirstname;
+                candidate.age = mage;
+                candidate.gender = mgender;
+                candidate.suburb = msuburb;
+                candidate.email = memail;
+                candidate.phone = mphone;
+            }
+            //check if the file has data
+            check++;
+        }
+        if (check == 1)
+            std::cout<<"Unable to determine the smallest number  - list is empty"<<std::endl;
+        //print out the candidate has the smallest votes
+        else
+            print_candidate(candidate);
+    }
+    myfile.close();
 }
 
 // would display candidate with highest vote count
 void print_highest_candidate_votes() {
-
+	Candidate candidate;
+    // open the candidate file
+    std::fstream myfile;
+    myfile.open("candidates.txt",std::ios::in);
+    // check if the file is valid
+    if (!myfile.is_open()) 
+    {
+        std::cout<<"File can't open"<<std::endl;
+    }
+    else
+    {
+        std::string lsymbol, lfirstname, llastname, lgender, lsuburb, lemail, lphone;
+        int lage, lid, count;
+        int max=0,check=0;
+        while (myfile.good()) 
+        {
+            //print from the file to the string line by line 
+            myfile>>count;
+            myfile>>lid;
+            myfile>>lsymbol;
+            myfile>>llastname;
+            myfile>>lfirstname;
+            myfile>>lage;
+            myfile>>lgender;
+            myfile>>lsuburb;
+            myfile>>lemail;
+            myfile>>lphone;
+            // check if the candidate has the most votes
+            if (count > max)
+            {
+                //store to the struct 
+                max = count;
+                candidate.count = max;
+                candidate.id = lid;
+                candidate.symbol = lsymbol;
+                candidate.l_name = llastname;
+                candidate.f_name = lfirstname;
+                candidate.age = lage;
+                candidate.gender = lgender;
+                candidate.suburb = lsuburb;
+                candidate.email = lemail; 
+                candidate.phone = lphone;
+            }
+            //check if the file has data
+            check++;
+        }
+        if (max == 0)
+            std::cout<<"Unable to determine the largest number  - list is empty"<<std::endl;
+        else if (check == 1)
+            std::cout<<"Unable to determine the largest number  - list is empty"<<std::endl;
+        //print out the candidate has the most votes
+        else
+            print_candidate(candidate);
+    }
+    myfile.close();
 }

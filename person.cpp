@@ -2,10 +2,10 @@
 
 // Parent class for voter and candidate
 struct Person {
-	// first name, last name, suburb, email, gender
+	// first name, last name, suburb, email, gender, phone
 	std::string f_name, l_name, suburb, email, gender, phone;
 
-	// age, phone and id
+	// age and id
 	int age, id;
 };
 
