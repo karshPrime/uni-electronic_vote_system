@@ -10,8 +10,6 @@ Contains user option functions
 #include "options.h"
 #include "general.h"
 
-//todo (aweb): check if candidate/voter exists (and other validation)
-
 // would display passed candidate's vote count
 void print_candidate_vote_count(int& id) {
 	std::ifstream file("candidates.txt");
@@ -74,7 +72,7 @@ void add_vote_to_candidate(int& cid, int& vid) {
 			std::tm tm;
 			localtime_s(&tm, &date);
 
-			// If the voter has already voted close the files and exit the function
+			// If the voter has already voted show a message, close the files, and exit the function
 			if (line.substr(0, 1) == "y") {
 				std::cout << "Voter " << vid << " has already voted!" << std::endl;
 
@@ -94,6 +92,10 @@ void add_vote_to_candidate(int& cid, int& vid) {
 		// append the line to the temporary string (whether updated or not)
 		updatedFileContents.append(line + "\n");
 	}
+
+	// move to beginning of the file
+	voterFile.clear();
+	voterFile.seekp(0);
 
 	// write the updated data and close the file
 	voterFile << updatedFileContents;
@@ -117,6 +119,10 @@ void add_vote_to_candidate(int& cid, int& vid) {
 		// append the line to the temporary string (whether updated or not)
 		updatedFileContents.append(line + "\n");
 	}
+
+	// move to beginning of the file
+	candidateFile.clear();
+	candidateFile.seekp(0);
 
 	// write the updated data and close the file
 	candidateFile << updatedFileContents;
