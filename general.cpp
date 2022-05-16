@@ -84,21 +84,21 @@ void print_candidate(const Candidate &c) {
 // given a string, splits it by the delimiter and puts it in a vector
 // Reference: https://stackoverflow.com/a/600040
 void split_string(const std::string &str, const std::string &delimiters, std::vector<std::string> &result) {
-  // Skip delimiters at beginning.
-  std::string::size_type lastPos = str.find_first_not_of(delimiters, 0);
+  // skip delimiters at beginning
+  std::string::size_type last_pos = str.find_first_not_of(delimiters, 0);
 
   // find first "non-delimiter".
-  std::string::size_type pos = str.find_first_of(delimiters, lastPos);
+  std::string::size_type pos = str.find_first_of(delimiters, last_pos);
 
-  while (std::string::npos != pos || std::string::npos != lastPos) {
+  while (std::string::npos != pos || std::string::npos != last_pos) {
     // found a token, add it to the vector.
-    result.push_back(str.substr(lastPos, pos - lastPos));
+    result.push_back(str.substr(last_pos, pos - last_pos));
 
     // skip delimiters. Note the "not_of"
-    lastPos = str.find_first_not_of(delimiters, pos);
+    last_pos = str.find_first_not_of(delimiters, pos);
 
     // find next "non-delimiter"
-    pos = str.find_first_of(delimiters, lastPos);
+    pos = str.find_first_of(delimiters, last_pos);
   }
 }
 

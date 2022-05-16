@@ -35,27 +35,27 @@ void print_candidate_vote_count(int &id) {
 // would add votes to required candidate
 void add_vote_to_candidate(int &cid, int &vid) {
 	// open the candidate and voter files
-	std::fstream candidateFile("candidates.txt");
-	std::fstream voterFile("voters.txt");
+	std::fstream candidate_file("candidates.txt");
+	std::fstream voter_file("voters.txt");
 
 	// if there is a problem opening the files show an error and exit the function
-	if (!candidateFile.is_open() || !voterFile.is_open()) {
+	if (!candidate_file.is_open() || !voter_file.is_open()) {
 		std::cout << "There was a problem opening the database files." << std::endl;
 
-		candidateFile.close();
-		voterFile.close();
+		candidate_file.close();
+		voter_file.close();
 
 		return;
 	}
 
 	// this string is used to store the updated file contents (after writing new data)
 	// and is rewritten back to the file
-	std::string updatedFileContents;
+	std::string updated_file_contents;
 
 	// the line being read from the files
 	std::string line;
 
-	while (std::getline(voterFile, line)) {
+	while (std::getline(voter_file, line)) {
 		// create the voter given the text string
 		auto voter = construct_voter(line);
 
@@ -70,35 +70,33 @@ void add_vote_to_candidate(int &cid, int &vid) {
 			if (line.substr(0, 1) == "y") {
 				std::cout << "Voter " << vid << " has already voted!" << std::endl;
 
-				voterFile.close();
-				candidateFile.close();
+				voter_file.close();
+				candidate_file.close();
 
 				return;
 			}
-
 			// replace the first character (voting status) with y to represent yes
 			line.replace(0, 1, "y");
 
 			// append the date string to end of the line
 			line.append(" " + std::to_string(tm.tm_mday) + "/" + std::to_string(tm.tm_mon + 1) + "/" + std::to_string(tm.tm_year - 100));
 		}
-
 		// append the line to the temporary string (whether updated or not)
-		updatedFileContents.append(line + "\n");
+		updated_file_contents.append(line + "\n");
 	}
 
 	// move to beginning of the file
-	voterFile.clear();
-	voterFile.seekp(0);
+	voter_file.clear();
+	voter_file.seekp(0);
 
 	// write the updated data and close the file
-	voterFile << updatedFileContents;
-	voterFile.close();
+	voter_file << updated_file_contents;
+	voter_file.close();
 
 	// reset the string to move on to the voter file
-	updatedFileContents = "";
+	updated_file_contents = "";
 
-	while (std::getline(candidateFile, line)) {
+	while (std::getline(candidate_file, line)) {
 		// create the candidate given the text string
 		auto candidate = construct_candidate(line);
 
@@ -111,16 +109,16 @@ void add_vote_to_candidate(int &cid, int &vid) {
 		}
 
 		// append the line to the temporary string (whether updated or not)
-		updatedFileContents.append(line + "\n");
+		updated_file_contents.append(line + "\n");
 	}
 
 	// move to beginning of the file
-	candidateFile.clear();
-	candidateFile.seekp(0);
+	candidate_file.clear();
+	candidate_file.seekp(0);
 
 	// write the updated data and close the file
-	candidateFile << updatedFileContents;
-	candidateFile.close();
+	candidate_file << updated_file_contents;
+	candidate_file.close();
 }
 
 // would display candidate with lowest vote count
@@ -129,6 +127,7 @@ void print_lowest_candidate_votes() {
 	// open the candidate file
 	std::fstream myfile;
 	myfile.open("candidates.txt", std::ios::in);
+
 	// check if the file is valid
 	if (!myfile.is_open()) {
 		std::cout << "File can't open" << std::endl;
