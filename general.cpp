@@ -28,7 +28,7 @@ void print_file_content(std::string file_name) {
 }
 
 // prints the details of a given candidate in a neat manner
-void print_candidate(const Candidate& c) {
+void print_candidate(const Candidate &c) {
 	// configure console color
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -81,9 +81,29 @@ void print_candidate(const Candidate& c) {
 	std::cout << c.email << std::endl;
 }
 
+// given a string, splits it by the delimiter and puts it in a vector
+// Reference: https://stackoverflow.com/a/600040
+void split_string(const std::string &str, const std::string &delimiters, std::vector<std::string> &result) {
+  // Skip delimiters at beginning.
+  std::string::size_type lastPos = str.find_first_not_of(delimiters, 0);
+
+  // find first "non-delimiter".
+  std::string::size_type pos = str.find_first_of(delimiters, lastPos);
+
+  while (std::string::npos != pos || std::string::npos != lastPos) {
+    // found a token, add it to the vector.
+    result.push_back(str.substr(lastPos, pos - lastPos));
+
+    // skip delimiters. Note the "not_of"
+    lastPos = str.find_first_not_of(delimiters, pos);
+
+    // find next "non-delimiter"
+    pos = str.find_first_of(delimiters, lastPos);
+  }
+}
+
 // creates a candidate object given a text string
-Candidate construct_candidate(const std::string& text)
-{
+Candidate construct_candidate(const std::string &text) {
 	Candidate candidate;
 
 	// get the tokens (in order defined in file)
@@ -106,8 +126,7 @@ Candidate construct_candidate(const std::string& text)
 }
 
 // creates a voter object given a text string
-Voter construct_voter(const std::string& text)
-{
+Voter construct_voter(const std::string &text) {
 	Voter voter;
 
 	// get the tokens (in order defined in file)
@@ -126,31 +145,8 @@ Voter construct_voter(const std::string& text)
 	voter.phone = attributes[8];
 
 	// if the candidate hasn't voted yet there wil be no date voted string
-	if (voter.has_voted)
-		voter.date_voted = attributes[9];
-
+	if (voter.has_voted) {
+    voter.date_voted = attributes[9];
+  }
 	return voter;
-}
-
-// Given a string, splits it by the delimiter and puts it in a vector
-// Reference: https://stackoverflow.com/a/600040
-void split_string(const std::string& str, const std::string& delimiters, std::vector<std::string>& result)
-{
-	// Skip delimiters at beginning.
-	std::string::size_type lastPos = str.find_first_not_of(delimiters, 0);
-
-	// Find first "non-delimiter".
-	std::string::size_type pos = str.find_first_of(delimiters, lastPos);
-
-	while (std::string::npos != pos || std::string::npos != lastPos)
-	{
-		// Found a token, add it to the vector.
-		result.push_back(str.substr(lastPos, pos - lastPos));
-
-		// Skip delimiters.  Note the "not_of"
-		lastPos = str.find_first_not_of(delimiters, pos);
-
-		// Find next "non-delimiter"
-		pos = str.find_first_of(delimiters, lastPos);
-	}
 }

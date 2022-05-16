@@ -1,17 +1,14 @@
-#pragma once
-
 /*
 Contains user option functions
 */
 
 #include <string>
 #include <ctime>
-
 #include "options.h"
 #include "general.h"
 
 // would display passed candidate's vote count
-void print_candidate_vote_count(int& id) {
+void print_candidate_vote_count(int &id) {
 	std::ifstream file("candidates.txt");
 
 	if (file.is_open()) {
@@ -26,20 +23,17 @@ void print_candidate_vote_count(int& id) {
 				// print out the candidate vote count
 				print_candidate(candidate);
 
-				// another option
-				// std::cout << "Candidate " << id << " (" << candidate.f_name << " " << candidate.l_name + ") " << " has " << candidate.count << " votes." << std::endl;
-				break;
+        break;
 			}
 		}
-
 		file.close();
-	}
-	else
-		std::cout << "candidate database not found" << std::endl;
+	} else {
+    std::cout << "candidate database not found" << std::endl;
+  }
 }
 
 // would add votes to required candidate
-void add_vote_to_candidate(int& cid, int& vid) {
+void add_vote_to_candidate(int &cid, int &vid) {
 	// open the candidate and voter files
 	std::fstream candidateFile("candidates.txt");
 	std::fstream voterFile("voters.txt");
@@ -136,17 +130,13 @@ void print_lowest_candidate_votes() {
 	std::fstream myfile;
 	myfile.open("candidates.txt", std::ios::in);
 	// check if the file is valid
-	if (!myfile.is_open())
-	{
+	if (!myfile.is_open()) {
 		std::cout << "File can't open" << std::endl;
-	}
-	else
-	{
+	} else {
 		std::string msymbol, mfirstname, mlastname, mgender, msuburb, memail, mphone;
 		int mage, mid;
 		int min = 1, check = 0, count;
-		while (myfile.good())
-		{
+		while (myfile.good()) {
 			//print from the file to the string line by line
 			myfile >> count;
 			myfile >> mid;
@@ -159,8 +149,7 @@ void print_lowest_candidate_votes() {
 			myfile >> memail;
 			myfile >> mphone;
 			// check if the candidate has the smallest votes
-			if (count <= min)
-			{
+			if (count <= min) {
 				//store to the struct 
 				min = count;
 				candidate.count = min;
@@ -177,11 +166,12 @@ void print_lowest_candidate_votes() {
 			//check if the file has data
 			check++;
 		}
-		if (check == 1)
-			std::cout << "Unable to determine the smallest number  - list is empty" << std::endl;
-		//print out the candidate has the smallest votes
-		else
-			print_candidate(candidate);
+		if (check == 1) {
+      std::cout << "Unable to determine the smallest number  - list is empty" << std::endl;
+      //print out the candidate has the smallest votes
+    } else {
+      print_candidate(candidate);
+    }
 	}
 	myfile.close();
 }
@@ -193,17 +183,13 @@ void print_highest_candidate_votes() {
 	std::fstream myfile;
 	myfile.open("candidates.txt", std::ios::in);
 	// check if the file is valid
-	if (!myfile.is_open())
-	{
+	if (!myfile.is_open()) {
 		std::cout << "File can't open" << std::endl;
-	}
-	else
-	{
+	} else {
 		std::string lsymbol, lfirstname, llastname, lgender, lsuburb, lemail, lphone;
 		int lage, lid, count;
 		int max = 0, check = 0;
-		while (myfile.good())
-		{
+		while (myfile.good()) {
 			//print from the file to the string line by line 
 			myfile >> count;
 			myfile >> lid;
@@ -216,8 +202,7 @@ void print_highest_candidate_votes() {
 			myfile >> lemail;
 			myfile >> lphone;
 			// check if the candidate has the most votes
-			if (count > max)
-			{
+			if (count > max) {
 				//store to the struct 
 				max = count;
 				candidate.count = max;
@@ -234,13 +219,14 @@ void print_highest_candidate_votes() {
 			//check if the file has data
 			check++;
 		}
-		if (max == 0)
-			std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
-		else if (check == 1)
-			std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
-		//print out the candidate has the most votes
-		else
-			print_candidate(candidate);
+		if (max == 0) {
+      std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
+    } else if (check == 1) {
+      std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
+      //print out the candidate has the most votes
+    } else {
+      print_candidate(candidate);
+    }
 	}
 	myfile.close();
 }
