@@ -2,8 +2,8 @@
 This header contains declaration to general.cpp functions.
 */
 
-// preventing header from being called more than once
-#pragma once
+#ifndef Group19_general
+#define Group19_general
 
 #include <iostream>   // required for input/output of data
 #include <windows.h>  // required to decorate windows console
@@ -27,3 +27,5 @@ Voter construct_voter(const std::string &);
 
 // Given a string, splits it by the delimiter and puts it in a vector
 void split_string(const std::string &, const std::string &, std::vector<std::string> &);
+
+#endif //Group19_general
