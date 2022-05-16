@@ -1,5 +1,5 @@
 [P] Print current vote count for any candidate
 [A] Add votes to a candidate
-[S] Display the Candidate with lowest vote count
-[L] Display the Candidate with highest vote count
+[S] Display the Candidate with the lowest vote count
+[L] Display the Candidate with the highest vote count
 [Q] Quit
