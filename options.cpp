@@ -2,10 +2,10 @@
 Contains user option functions
 */
 
-#include <string>
 #include <ctime>
 #include "options.h"
 #include "general.h"
+#include "person.cpp"
 
 // would display passed candidate's vote count
 void print_candidate_vote_count(int &id) {
@@ -15,13 +15,13 @@ void print_candidate_vote_count(int &id) {
     std::string line;
 
     while (std::getline(file, line)) {
-      // create the candidate given the text string
-      auto candidate = construct_candidate(line);
+      // create and initialize candidate from the given text string
+      Candidate candidate; candidate.init(line);
 
       // check if this is the candidate we are searching for
       if (candidate.id == id) {
         // print out the candidate vote count
-        print_candidate(candidate);
+        candidate.print();
 
         break;
       }
@@ -56,8 +56,8 @@ void add_vote_to_candidate(int &cid, int &vid) {
   std::string line;
 
   while (std::getline(voter_file, line)) {
-    // create the voter given the text string
-    auto voter = construct_voter(line);
+    // create and initialize voter from the given text string
+    Voter voter; voter.init(line);
 
     // check if this is the voter we are searching for
     if (voter.id == vid) {
@@ -97,15 +97,15 @@ void add_vote_to_candidate(int &cid, int &vid) {
   updated_file_contents = "";
 
   while (std::getline(candidate_file, line)) {
-    // create the candidate given the text string
-    auto candidate = construct_candidate(line);
+    // create and initialize candidate from the given text string
+    Candidate candidate; candidate.init(line);
 
     // check if this is the candidate we are searching for
     if (candidate.id == cid) {
       // increment the candidate votecount
       // since the vote count is the first token we have to get the index of the first delimeter
       // and replace the value with the incremented vote count
-      line.replace(0, line.find(" "), std::to_string(++candidate.count));
+      line.replace(0, line.find(' '), std::to_string(++candidate.count));
     }
 
     // append the line to the temporary string (whether updated or not)
@@ -169,7 +169,7 @@ void print_lowest_candidate_votes() {
       std::cout << "Unable to determine the smallest number  - list is empty" << std::endl;
       //print out the candidate has the smallest votes
     } else {
-      print_candidate(candidate);
+      candidate.print();
     }
   }
   myfile.close();
@@ -224,7 +224,7 @@ void print_highest_candidate_votes() {
       std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
       //print out the candidate has the most votes
     } else {
-      print_candidate(candidate);
+      candidate.print();
     }
   }
   myfile.close();
