@@ -13,6 +13,9 @@ Contains user option functions
 void print_candidate_vote_count(int& id) {
 	std::ifstream file("candidates.txt");
 
+	// whether or not the candidate exists
+	bool found_candidate = false;
+
 	if (file.is_open()) {
 		std::string line;
 
@@ -22,12 +25,21 @@ void print_candidate_vote_count(int& id) {
 
 			// check if this is the candidate we are searching for
 			if (candidate.id == id) {
+				found_candidate = true;
+
 				// print out the candidate vote count
+				std::cout << "The following candidate has " << candidate.count << " votes. More information below." << std::endl;
+
+				// print out extra info
 				candidate.print();
 
 				break;
 			}
 		}
+
+		if (!found_candidate)
+			std::cout << "Candidate with id " << id << " not found." << std::endl;
+
 		file.close();
 	}
 	else {
@@ -173,7 +185,7 @@ void print_lowest_candidate_votes() {
 	std::cout << results.size() << " candiate(s) have the lowest votes equal to: " << min_vote_count << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto &candidate : results) {
+	for (auto& candidate : results) {
 		candidate.print();
 		std::cout << "----------" << std::endl;
 	}
@@ -230,7 +242,7 @@ void print_highest_candidate_votes() {
 	std::cout << results.size() << " candiate(s) have the highest votes equal to: " << max_vote_count << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto &candidate : results) {
+	for (auto& candidate : results) {
 		candidate.print();
 		std::cout << "----------" << std::endl;
 	}
