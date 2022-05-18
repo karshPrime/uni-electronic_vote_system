@@ -41,7 +41,7 @@ public:
 class Candidate : public Person {
 public:
   std::string symbol;	// political party symbol
-  int count;	// count can only be positive int
+  int count;
 
   void init(const std::string &text){
     // get the tokens (in order defined in file)
