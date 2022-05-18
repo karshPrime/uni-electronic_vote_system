@@ -14,6 +14,10 @@ public:
 
     // age and id
     int age, id;
+
+	// overriden by subclasses
+	// responsible for initalization from database string
+	virtual void init(const std::string& text) = 0;
 };
 
 class Voter : public Person {
