@@ -69,7 +69,7 @@ int main() {
 		default:
 			// setting font color to dark red
 			SetConsoleTextAttribute(h, red);    // prompt font color = red
-			std::cout << "Invalid Input\n";
+			std::cout << "Unknown selection, please try again\n";
 			break;
 		}
 		std::cout << std::endl << "<========================>" << std::endl << std::endl;
