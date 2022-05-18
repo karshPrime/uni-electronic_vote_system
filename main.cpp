@@ -64,6 +64,6 @@ int main() {
         std::cout << "Invalid Input\n";
         break;
     }
-    std::cout << std::endl;
+    std::cout << "<%%%%|==========>" << std::endl << std::endl;
   }
 }
