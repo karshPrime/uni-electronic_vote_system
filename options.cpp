@@ -148,7 +148,7 @@ void print_lowest_candidate_votes() {
 	std::string line;
 
 	// the current lowest vote count (defaults to highest int value)
-	int minVoteCount = INT_MAX;
+	int min_vote_count = INT_MAX;
 
 	while (std::getline(file, line)) {
 		// create and initialize candidate from the given text string
@@ -156,24 +156,24 @@ void print_lowest_candidate_votes() {
 
 		// if the candidate has lower vote count
 		// clear the results and set the new minimum
-		if (candidate.count < minVoteCount) {
-			minVoteCount = candidate.count;
+		if (candidate.count < min_vote_count) {
+			min_vote_count = candidate.count;
 
 			results.clear();
 			results.push_back(candidate);
 		}
 		// if candidate vote count is equal to minimum
 		// add them to the list
-		else if (candidate.count == minVoteCount) {
+		else if (candidate.count == min_vote_count) {
 			results.push_back(candidate);
 		}
 	}
 
 	// print out the results
-	std::cout << results.size() << " candiate(s) have the lowest votes equal to: " << minVoteCount << std::endl;
+	std::cout << results.size() << " candiate(s) have the lowest votes equal to: " << min_vote_count << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto& candidate : results) {
+	for (auto &candidate : results) {
 		candidate.print();
 		std::cout << "----------" << std::endl;
 	}
@@ -205,7 +205,7 @@ void print_highest_candidate_votes() {
 	std::string line;
 
 	// the current highest vote count (defaults to lowest int value)
-	int maxVoteCount = -1;
+	int max_vote_count = -1;
 
 	while (std::getline(file, line)) {
 		// create and initialize candidate from the given text string
@@ -213,24 +213,24 @@ void print_highest_candidate_votes() {
 
 		// if the candidate has higher vote count
 		// clear the results and set the new maximum
-		if (candidate.count > maxVoteCount) {
-			maxVoteCount = candidate.count;
+		if (candidate.count > max_vote_count) {
+			max_vote_count = candidate.count;
 
 			results.clear();
 			results.push_back(candidate);
 		}
 		// if candidate vote count is equal to maximum
 		// add them to the list
-		else if (candidate.count == maxVoteCount) {
+		else if (candidate.count == max_vote_count) {
 			results.push_back(candidate);
 		}
 	}
 
 	// print out the results
-	std::cout << results.size() << " candiate(s) have the highest votes equal to: " << maxVoteCount << std::endl;
+	std::cout << results.size() << " candiate(s) have the highest votes equal to: " << max_vote_count << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto& candidate : results) {
+	for (auto &candidate : results) {
 		candidate.print();
 		std::cout << "----------" << std::endl;
 	}
