@@ -74,4 +74,6 @@ int main() {
 		}
 		std::cout << std::endl << "<========================>" << std::endl << std::endl;
 	}
+
+	std::cout << "Goodbye!" << std::endl;
 }
