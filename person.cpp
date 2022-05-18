@@ -1,3 +1,9 @@
+// Aweb Mekhilef (103574757) Utkarsh Kishore Ranjan (102874485) Quang Thanh Tran (102649968)
+
+/*
+	Contains the classes representing the voter and candidate
+*/
+
 #include "general.h"
 
 // Parent class for voter and candidate
@@ -15,6 +21,7 @@ public:
     bool has_voted = false;  // if voter has voted; by default not.
     std::string date_voted; // will not be included in the file until the voter casts their vote.
 
+	// initalizes the voter given a string from the database
     void init(const std::string &text) {
       // get the tokens (in order defined in file)
       std::vector<std::string> attributes;
@@ -43,6 +50,7 @@ public:
   std::string symbol;	// political party symbol
   int count;
 
+  // initalizes the candidate given a string from the database
   void init(const std::string &text){
     // get the tokens (in order defined in file)
     std::vector<std::string> attributes;
@@ -61,6 +69,7 @@ public:
     phone = attributes[9];
   }
 
+  // print candidate details
   void print() {
     // configure console color
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);

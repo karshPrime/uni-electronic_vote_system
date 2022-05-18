@@ -1,3 +1,9 @@
+// Aweb Mekhilef (103574757) Utkarsh Kishore Ranjan (102874485) Quang Thanh Tran (102649968)
+
+/*
+	The main file is responsible for taking input and delegating it to other functions.
+*/
+
 #include "general.h"
 #include "options.h"
 
@@ -11,7 +17,9 @@ void input(const std::string& display, T& store_in) {
 	std::cin.ignore(100, '\n');
 }
 
-// main function
+// the entry point of the program
+// prints the header and options to the user
+// takes in input and uses a switch statement to call the appropriate options function
 int main() {
 	// configure console color
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
