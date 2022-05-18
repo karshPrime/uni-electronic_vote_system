@@ -123,6 +123,9 @@ void add_vote_to_candidate(int& cid, int& vid) {
 			// since the vote count is the first token we have to get the index of the first delimeter
 			// and replace the value with the incremented vote count
 			line.replace(0, line.find(' '), std::to_string(++candidate.count));
+
+			// print that the operation has completed
+			std::cout << "Candidate " << cid << " has " << candidate.count << " votes." << std::endl;
 		}
 
 		// append the line to the temporary string (whether updated or not)
