@@ -214,7 +214,7 @@ void print_highest_candidate_votes() {
 
 	// if the list is empty (empty file) show an error and exit function
 	if (file.peek() == std::ifstream::traits_type::eof()) {
-		std::cout << "Unable to determine the smallest number  - list is empty" << std::endl;
+		std::cout << "Unable to determine the largest number  - list is empty" << std::endl;
 		return;
 	}
 
