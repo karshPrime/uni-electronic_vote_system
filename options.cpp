@@ -173,8 +173,10 @@ void print_lowest_candidate_votes() {
 	std::cout << results.size() << " candiate(s) have the lowest votes equal to: " << minVoteCount << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto& candidate : results)
+	for (auto& candidate : results) {
 		candidate.print();
+		std::cout << "----------" << std::endl;
+	}
 
 	file.close();
 }
@@ -228,8 +230,9 @@ void print_highest_candidate_votes() {
 	std::cout << results.size() << " candiate(s) have the highest votes equal to: " << maxVoteCount << std::endl;
 	std::cout << "The following candidates are: " << std::endl;
 
-	for (auto& candidate : results)
+	for (auto& candidate : results) {
 		candidate.print();
-
+		std::cout << "----------" << std::endl;
+	}
 	file.close();
 }
