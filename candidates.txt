@@ -1,4 +1,4 @@
-0 1 Labor Smith Rae 50 Female Springfield Rae_Smith@gmail.com +61647544852
+1 1 Labor Smith Rae 50 Female Springfield Rae_Smith@gmail.com +61647544852
 0 2 Liberal Jinping Joe 45 Male SurreyHills Joe_Jinping@gmail.com +61245874632
 0 3 Liberal White Walter 32 Male Jimboomba Walter_White@gmail.com +61244587456
 0 4 Labor Gray Lana 67 Female Jimboomba Lana_Gray@gmail.com +61452333695
