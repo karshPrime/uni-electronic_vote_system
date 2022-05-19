@@ -8,6 +8,9 @@ announcements for the project related matters which will be available in Canvas.
 responsible for checking Canvas on a regular basis to stay in formed with regards to any updates 
 about the project. 
 
+<details>
+<summary>Detailed Requirements</summary>
+ 
 # Task 1: Create a Primary Database 
 To start with, create a primary database with voter table and a candidate table as shown below. Add at least 10 different field names on both. You need to input sample datasets (create at least 10 to 15 datasets). 
 
@@ -87,3 +90,5 @@ Marks will be deducted if you fail to meet any of the following general requirem
 - You must follow the instructions given in each task (team based) to complete the corresponding task. 
 - You must submit your project related submissions (code, demonstration, and report) before the due date mentioned in the canvas project submission page. 
 - You (the Team) are only allowed to use Text File as database for your project outcome. We will not accept any other formats for assessment purpose. 
+
+</details>
