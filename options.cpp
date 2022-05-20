@@ -253,3 +253,4 @@ void print_highest_candidate_votes() {
 	}
 	file.close();
 }
+

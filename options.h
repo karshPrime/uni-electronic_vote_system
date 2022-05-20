@@ -20,3 +20,4 @@ void print_lowest_candidate_votes();
 void print_highest_candidate_votes();
 
 #endif //Group19_options
+
