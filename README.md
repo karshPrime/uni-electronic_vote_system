@@ -1,4 +1,10 @@
 # Electoral Commission
+
+![screenshot](https://raw.githubusercontent.com/Swinny-Tasks/Group19/main/gallery/project.png)
+
+<details>
+<summary>Project Requirements</summary>
+
 In this Assignment, you are required to implement a practical application based on State 
 electoral commission E-system. You have to design and program E-system, where the 
 assessment involves project brief, project demonstrate (Team based - 30%) and a final project 
@@ -7,9 +13,6 @@ which is assessed 15% of your unit grades. Always engage in discussion forum and
 announcements for the project related matters which will be available in Canvas. You are 
 responsible for checking Canvas on a regular basis to stay in formed with regards to any updates 
 about the project. 
-
-<details>
-<summary>Detailed Requirements</summary>
  
 # Task 1: Create a Primary Database 
 To start with, create a primary database with voter table and a candidate table as shown below. Add at least 10 different field names on both. You need to input sample datasets (create at least 10 to 15 datasets). 
